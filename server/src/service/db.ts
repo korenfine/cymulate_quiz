@@ -1,6 +1,6 @@
 import { Db, MongoClient } from 'mongodb'
 
-const DB_URI = 'mongodb+srv://root:root@cluster0.h7xilpp.mongodb.net/?retryWrites=true&w=majority'
+const DB_URI = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASS}@${process.env.DB_HOST}/?retryWrites=true&w=majority`
 
 export interface DbServiceInterface {
     find(table: string, data: {}): any;
